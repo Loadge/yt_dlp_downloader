@@ -1,0 +1,35 @@
+# Basic YouTube Downloader Configuration
+# 
+# This is a simple example showing the minimum required configuration
+# to download YouTube videos.
+
+# Target folder where videos will be saved
+# 
+# IMPORTANT FOR DOCKER USERS:
+# When using Docker, this should typically be "/downloads" which maps to
+# the volume you configured in docker-compose.yml
+#
+# Path formats for Python (non-Docker) usage:
+# - Relative path: "./downloads" or "downloads"
+# - Windows absolute: "C:\\Users\\YourName\\Videos"
+# - Windows UNC (network): "\\\\ServerName\\ShareName\\folder" or "//ServerName/ShareName/folder"
+# - Linux/Mac absolute: "/home/user/videos"
+#
+# For Docker with mapped drives, see NETWORK_DRIVES.md
+#
+target_folder: "/downloads"
+
+# List of videos to download
+videos:
+  # Example 1: Simple video download
+  - url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    name: "Rick Astley - Never Gonna Give You Up"
+  
+  # Example 2: Another video
+  - url: "https://www.youtube.com/watch?v=jNQXAC9IVRw"
+    name: "Me at the zoo"
+  
+  # Example 3: Video with custom quality
+  - url: "https://www.youtube.com/watch?v=9bZkp7q19f0"
+    name: "My Favorite Video"
+    quality: "720p"

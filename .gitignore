@@ -1,0 +1,88 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Project specific
+downloads/
+logs/
+config/
+*.log
+cookies.txt
+*.mp4
+*.mkv
+*.webm
+*.avi
+*.mov
+*.flv
+*.m4a
+*.mp3
+*.wav
+
+# Keep example configs but ignore actual config
+config/*
+!config/.gitkeep
+
+# Keep example directories
+!examples/
+examples/*.mp4
+examples/*.mkv
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+
+# Environment variables
+.env
+.env.local
+
+# Test files
+test_downloads/
+*.test.yaml

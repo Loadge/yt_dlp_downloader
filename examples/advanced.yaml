@@ -1,0 +1,82 @@
+# Advanced YouTube Downloader Configuration
+#
+# This example demonstrates all available configuration options
+# including quality settings, subtitles, cookies, and custom formats.
+
+# Target folder for downloads
+# 
+# IMPORTANT: Path format examples:
+# Windows local:     "C:\\Users\\YourName\\Videos\\Downloads"
+# Windows network:   "\\\\FileServer\\Media\\Videos"
+# Windows network:   "//FileServer/Media/Videos"
+# Linux/Mac:         "/home/username/videos"
+# Relative:          "./downloads" or "downloads"
+# Docker volume:     "/downloads"
+#
+# NOTE: In YAML, backslashes must be escaped (\\) or use forward slashes (/)
+#
+target_folder: "./downloads"
+
+# Global settings (applied to all videos unless overridden)
+default_quality: "1080p"           # Default video quality
+subtitles: "en"                    # Download English subtitles by default
+cookies: "cookies.txt"             # Cookie file for authenticated downloads
+download_thumbnails: false         # Download video thumbnails
+write_metadata: false              # Save video metadata as JSON
+
+videos:
+  # Standard video with default settings
+  - url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    name: "Standard Quality Video"
+  
+  # High quality video (4K)
+  - url: "https://www.youtube.com/watch?v=example1"
+    name: "4K Ultra HD Video"
+    quality: "2160p"
+  
+  # Video with multiple subtitle languages
+  - url: "https://www.youtube.com/watch?v=example2"
+    name: "Multi-Language Video"
+    quality: "1440p"
+    subtitles: ["en", "es", "fr", "de"]
+  
+  # Video with custom subtitle configuration
+  - url: "https://www.youtube.com/watch?v=example3"
+    name: "Custom Subtitles"
+    subtitles:
+      enabled: true
+      auto: true
+      languages: ["en", "ja"]
+  
+  # Audio-only download (best quality)
+  - url: "https://www.youtube.com/watch?v=example4"
+    name: "Podcast Episode 01"
+    quality: "audio"
+    thumbnail: true
+    metadata: true
+  
+  # Advanced: Custom format string for power users
+  # This example downloads best MP4 video with M4A audio
+  - url: "https://www.youtube.com/watch?v=example5"
+    name: "Custom Format Video"
+    format: "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]"
+  
+  # Video requiring authentication (age-restricted)
+  # Make sure cookies.txt file exists
+  - url: "https://www.youtube.com/watch?v=example6"
+    name: "Age Restricted Video"
+    quality: "1080p"
+    cookies: "cookies.txt"
+  
+  # Lower quality for faster downloads
+  - url: "https://www.youtube.com/watch?v=example7"
+    name: "Quick Download"
+    quality: "480p"
+  
+  # Video with all metadata and thumbnails
+  - url: "https://www.youtube.com/watch?v=example8"
+    name: "Complete Archive"
+    quality: "best"
+    thumbnail: true
+    metadata: true
+    subtitles: "auto"

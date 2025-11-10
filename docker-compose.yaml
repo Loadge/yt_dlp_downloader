@@ -1,0 +1,60 @@
+services:
+  yt-downloader:
+    build: .
+    image: yt-downloader:latest
+    container_name: yt-downloader
+    
+    # Environment variables
+    environment:
+      - CONFIG_PATH=/config/videos.yaml
+      - DOWNLOAD_PATH=/downloads
+      - LOG_PATH=/logs
+      - JSON_OUTPUT=false
+      # Optionally set PUID and PGID for file permissions
+      - PUID=1026
+      - PGID=100
+    
+    # Volume mounts
+    volumes:
+      # Mount your config file
+      - ./config:/config:ro
+      
+      # Mount download directory (choose ONE option below)
+      
+      # Option 1: Local folder in project directory (default)
+      - ./downloads:/downloads
+      
+      # Option 2: Local Windows folder (absolute path)
+      # - C:\Users\YourName\Videos:/downloads
+      
+      # Option 3: Mapped network drive (RECOMMENDED for network storage)
+      - Z:\03 Peliculas, Libros, Series\00 PELIS:/downloads
+      # First, map your network share to a drive letter in Windows:
+      # - Right-click "This PC" → "Map network drive"
+      # - Choose drive letter (e.g., Z:)
+      # - Enter network path: \\ServerName\ShareName
+      # Then uncomment and modify the line below:
+      # - Z:\Videos:/downloads
+      
+      # Option 4: Different mapped drive examples
+      # - Y:\Media\Movies:/downloads
+      # - X:\Backup\Videos:/downloads
+      
+      # Mount logs directory
+      - ./logs:/logs
+      
+      # Optional: Mount cookies file for authenticated downloads (uncomment if needed)
+      # - ./cookies.txt:/app/cookies.txt:ro
+    
+    # Don't restart - run once and exit
+    restart: "no"
+    
+    # Resource limits (optional)
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '1'
+          memory: 512M

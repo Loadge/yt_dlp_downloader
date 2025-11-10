@@ -1,0 +1,57 @@
+# Playlist Download Configuration
+#
+# This example shows how to download entire playlists
+# and mix playlist downloads with individual videos.
+
+# Target folder examples for different platforms:
+# target_folder: "./downloads"                                    # Relative path
+# target_folder: "C:\\Users\\YourName\\Videos"                    # Windows local drive
+# target_folder: "D:\\Media\\Videos"                              # Windows different drive
+# target_folder: "\\\\FileServer\\SharedDrive\\Videos"            # Windows network share (UNC)
+# target_folder: "//FileServer/SharedDrive/Videos"                # Windows network alternative
+# target_folder: "/home/username/videos"                          # Linux/Mac local
+# target_folder: "/mnt/media/videos"                              # Linux mounted drive
+# target_folder: "/downloads"                                     # Docker volume mount
+target_folder: "./downloads"
+default_quality: "720p"
+
+videos:
+  # Download an entire playlist
+  # All videos will be saved in a subfolder
+  - url: "https://www.youtube.com/playlist?list=PLrAXtmErZgOeiKm4sgNOknGvNjby9efdf"
+    name: "Python Tutorial Series"
+    is_playlist: true
+    quality: "1080p"
+  
+  # Another playlist with subtitles
+  - url: "https://www.youtube.com/playlist?list=PLexampleplaylist2"
+    name: "Cooking Tutorials"
+    is_playlist: true
+    quality: "720p"
+    subtitles: ["en", "es"]
+  
+  # Mix with individual videos
+  - url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    name: "Single Video"
+    quality: "1080p"
+  
+  # Audio-only playlist (e.g., music or podcasts)
+  - url: "https://www.youtube.com/playlist?list=PLexampleplaylist3"
+    name: "Music Collection"
+    is_playlist: true
+    quality: "audio"
+    thumbnail: true
+  
+  # Playlist with custom format
+  - url: "https://www.youtube.com/playlist?list=PLexampleplaylist4"
+    name: "Educational Content"
+    is_playlist: true
+    format: "bestvideo[height<=720]+bestaudio/best[height<=720]"
+    subtitles: "auto"
+
+# Note: When downloading playlists, each video will be saved as:
+# ./downloads/[playlist_name]/[index] - [video_title].mp4
+# 
+# For example:
+# ./downloads/Python Tutorial Series/001 - Introduction to Python.mp4
+# ./downloads/Python Tutorial Series/002 - Variables and Data Types.mp4

@@ -1,0 +1,12 @@
+# Core dependencies with pinned versions for reproducibility
+# Update these periodically with: pip list --outdated
+
+# YouTube downloader
+yt-dlp==2024.10.22
+
+# YAML configuration parser
+pyyaml==6.0.2
+
+# Optional: Uncomment if you need additional features
+# requests==2.31.0  # For custom HTTP requests
+# pillow==10.1.0    # For thumbnail processing
