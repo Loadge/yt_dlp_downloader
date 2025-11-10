@@ -28,7 +28,7 @@ services:
       # - C:\Users\YourName\Videos:/downloads
       
       # Option 3: Mapped network drive (RECOMMENDED for network storage)
-      - Z:\03 Peliculas, Libros, Series\00 PELIS:/downloads
+      - Z:\path_to_videos\:/downloads
       # First, map your network share to a drive letter in Windows:
       # - Right-click "This PC" → "Map network drive"
       # - Choose drive letter (e.g., Z:)

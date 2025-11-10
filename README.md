@@ -1,6 +1,6 @@
 # YouTube Downloader with yt-dlp
 
-[![Docker Build](https://github.com/yourusername/yt-dlp-downloader/actions/workflows/docker-build.yml/badge.svg)](https://github.com/yourusername/yt-dlp-downloader/actions/workflows/docker-build.yml)
+[![Docker Build](https://github.com/Loadge/yt-dlp-downloader/actions/workflows/docker-build.yml/badge.svg)](https://github.com/Loadge/yt-dlp-downloader/actions/workflows/docker-build.yml)
 [![Python Version](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![yt-dlp](https://img.shields.io/badge/yt--dlp-latest-red.svg)](https://github.com/yt-dlp/yt-dlp)
